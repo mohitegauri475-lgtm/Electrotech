@@ -30,6 +30,8 @@ USER spring:spring
 
 # Render assigns dynamic PORT environment variable at runtime
 ENV PORT=8080
+ENV SPRING_PROFILES_ACTIVE=postgres
+ENV RENDER=true
 EXPOSE 8080
 
 # Production JVM optimizations for container memory constraints (e.g. Render 512MB free tier)
