@@ -6,11 +6,8 @@
 FROM maven:3.9.6-eclipse-temurin-17-alpine AS builder
 WORKDIR /workspace
 
-# Pre-cache Maven dependencies
+# Copy pom.xml and source code to package application
 COPY pom.xml .
-RUN mvn dependency:go-offline -B
-
-# Copy source code and package application
 COPY src ./src
 RUN mvn clean package -DskipTests -B
 

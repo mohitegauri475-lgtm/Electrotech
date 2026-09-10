@@ -56,6 +56,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         // Public Endpoints
                         .requestMatchers("/api/auth/**").permitAll()
+                        .requestMatchers("/api/health", "/health", "/api/ping").permitAll()
                         .requestMatchers(HttpMethod.GET, "/api/boxes/**").permitAll()
                         .requestMatchers(HttpMethod.GET, "/api/products/**").permitAll()
                         .requestMatchers(HttpMethod.GET, "/api/hampers/**").permitAll()

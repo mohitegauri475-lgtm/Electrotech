@@ -19,7 +19,7 @@ services:
     dockerfilePath: ./Dockerfile
     dockerContext: .
     plan: free
-    healthCheckPath: /api/hampers
+    healthCheckPath: /api/health
     envVars:
       - key: SPRING_PROFILES_ACTIVE
         value: postgres
