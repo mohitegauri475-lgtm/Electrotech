@@ -1,4 +1,26 @@
-export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || '/api';
+/**
+ * Normalizes the API Base URL:
+ * - Falls back to '/api' for local development via Vite proxy
+ * - Strips any trailing slashes
+ * - Automatically appends '/api' if a full cloud host URL (e.g. https://electrotech-backend.onrender.com)
+ *   is provided in VITE_API_BASE_URL without the '/api' path.
+ */
+const getNormalizedApiBaseUrl = () => {
+  const envUrl = import.meta.env.VITE_API_BASE_URL;
+  if (!envUrl || !envUrl.trim()) {
+    return '/api';
+  }
+  let cleanUrl = envUrl.trim();
+  while (cleanUrl.endsWith('/')) {
+    cleanUrl = cleanUrl.slice(0, -1);
+  }
+  if (cleanUrl.startsWith('http') && !cleanUrl.endsWith('/api')) {
+    cleanUrl = `${cleanUrl}/api`;
+  }
+  return cleanUrl;
+};
+
+export const API_BASE_URL = getNormalizedApiBaseUrl();
 
 export const ENDPOINTS = {
   AUTH: {

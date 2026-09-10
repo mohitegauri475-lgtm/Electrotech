@@ -1,0 +1,9 @@
+.git
+.idea
+IntelliJ IDEA*
+**/node_modules/
+**/dist/
+**/target/
+*.log
+err.log
+run.log

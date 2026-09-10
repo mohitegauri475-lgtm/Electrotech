@@ -26,7 +26,7 @@ public class User {
     @Column(length = 20)
     private String phone;
 
-    @Column(name = "avatar_url", columnDefinition = "NVARCHAR(MAX)")
+    @Column(name = "avatar_url", columnDefinition = "TEXT")
     private String avatarUrl;
 
     @Column(length = 500)
