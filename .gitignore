@@ -1,0 +1,35 @@
+﻿# IntelliJ IDEA / IDEs
+.idea/
+*.iml
+*.iws
+*.ipr
+.vscode/
+IntelliJ IDEA*/
+
+# Build outputs & Java binaries
+**/target/
+*.jar
+*.war
+*.ear
+*.class
+
+# Node / Frontend
+**/node_modules/
+**/dist/
+**/build/
+.npm/
+.eslintcache
+
+# Logs & Temporary files
+*.log
+err.log
+run.log
+*.tmp
+*.bak
+.DS_Store
+Thumbs.db
+
+# Environment & local files
+*.local
+.env
+.env.local
